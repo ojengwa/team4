@@ -1,0 +1,29 @@
+RSS Feed Generator:
+
+Problem:
+A program which can read in text from other sources and put it in RSS or Atom news format for syndication.
+AWS
+gitpages
+
+Input:
+Any valid CRUD Operation
+
+Output:
+A web app that does the basic functionalities of a Feed Generator.
+
+Suggested Tools:
+Requests/BeautifulSoup/Scrapy
+Flask
+Flask-Restful/ Flask-Restless
+JQuery
+
+
+Key Results:
+Unit Tests
+Working Prototypes
+>= 70% Test Coverages
+Ability to retain data
+
+Additional Points:
+User Authentication
+Clocking your solution speed
