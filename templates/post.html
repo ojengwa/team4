@@ -1,0 +1,17 @@
+{% extends "base.html" %} <!--inherits from base.html-->
+    
+    {% block content %}
+    <div id="header">
+        <h1>{{post.title}}</h1>
+        {% if post.subtitle %}
+          <h2>{{post.subtitle}}</h2>
+        {% endif %}
+        <h3 id="date">{{post.date|date}}</h3>
+    </div>
+
+    <div id="content">
+        {{post.html|safe}}
+    </div>
+	{% endblock content %}
+    
+  </body>

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div id="header">
+        <h1>Team4</h1>
+    </div>
+
+    <div id="posts">
+        {% for post in posts %}
+            <div class="post">
+                <span class="post-date">{{ post.date|date }}</span>
+                <a href="{{ post.url }}" class="post-title">
+                    Go to Feeds
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
