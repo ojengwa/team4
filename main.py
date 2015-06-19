@@ -1,12 +1,21 @@
 import os
 import sys
 
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template, url_for, request, flash, redirect
 from flask.ext.frozen import Freezer
 from werkzeug import cached_property
 from werkzeug.contrib.atom import AtomFeed
 import markdown
 import yaml
+
+import requests
+from datetime import datetime
+from bs4 import BeautifulSoup
+from time import clock
+
+# from app import app
+# from .forms import LoginForm
+
 
 
 
@@ -90,6 +99,45 @@ def feed():
             updated=post.date,
             published=post.date)
     return feed.get_response()
+
+
+
+
+
+def get_url_details(url):
+    r = requests.get(url)
+    soup = BeautifulSoup(r.content) #.prettify()
+    return soup
+
+
+
+def make_the_tags_beautiful(url):
+    pretty_link = get_url_details(url).prettify
+    return pretty_link
+
+
+
+# use this method to pass the necessay content to the view
+def pass_the_necessary_content_with_soup():
+    pass
+
+link_to_crawl = "http://www.konga.com/catalogsearch/result/?cat=0&q=nokia+lumia"
+link_to_crawl2 = "http://www.goal.com/en-ng/"
+link_to_crawl3 = "http://lindaikeji.blogspot.com/"
+
+
+
+
+
+@app.route('/reader')
+def very_fast_soup():
+    results = get_url_details(link_to_crawl3)
+    print results
+    return render_template('lindaing.html', year=datetime.now().year, results = results)
+
+
+
+
 
 
 if __name__ == '__main__':

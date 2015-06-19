@@ -1,11 +1,11 @@
-{% extends "base.html" %} <!--inherits from base.html-->
- 
- 
-   <head> <title> Hello </title> </head>
-    {% block head %}
+ <html>
+ <head> 
+    <title> {{post.title}} </title> 
+    
     <link type = "text/css" rel = "stylesheet" href = "../static/post.css"/>
-    {% endblock head %}  
-
+    
+</head>
+{% extends "base.html" %} <!--inherits from base.html-->
     <body>
     {% block content %}
     <div id="header">
@@ -20,3 +20,4 @@
     {% endblock content %}
     
     </body>
+</html>
