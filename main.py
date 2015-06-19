@@ -89,7 +89,11 @@ def feed():
     feed = AtomFeed('Recent Articles',
                     feed_url=request.url, 
                     url=request.url_root)
+<<<<<<< HEAD
     posts = posts[:4]
+=======
+    posts = posts[:1]
+>>>>>>> bc868330dbf13e5210a70e025221483e9107e0b0
     for post in posts:
         feed.add(post.title, 
             unicode(post.html),
@@ -144,4 +148,8 @@ if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == 'build': #To freeze our website into a file of static files with the command build
         freezer.freeze()
     else:
+<<<<<<< HEAD
         app.run(debug=True)
+=======
+        app.run(debug=True)
+>>>>>>> bc868330dbf13e5210a70e025221483e9107e0b0

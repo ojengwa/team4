@@ -1,19 +1,21 @@
 <html>
 	<head>
-        
+
         <title>Team4</title>
+        {% block head %}
+        {% endblock head %}
 
 	<!-- StyleSheets -->
 	<link type = "text/css" rel = "stylesheet" href = "../static/css/base.css"/>
 	<link type = "text/css" rel = "stylesheet" href = "../static/css/bootstrap.min.css"/>
-	
+
 	<!-- Atom Feed -->
 	<link href="{{ url_for('feed') }}"
       rel="alternate"
-      title="Recent Changes" 
+      title="Recent Changes"
       type="application/atom+xml">
 	</head>
-	
+
 	<body>
 	<!-- Top level navbar -->
 		<div class="navbar navbar-inverse navbar-fixed-top">
@@ -27,10 +29,10 @@
                 <a href="/" class="navbar-brand">AndelaRator</a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">                    
+                <ul class="nav navbar-nav">
                     <li><a href="/feed.atom">feeds</a></li>
                     <li><a href="/reader">Aunty Linda</a></li>
-                    
+
                 </ul>
             </div>
         </div>
