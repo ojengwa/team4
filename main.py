@@ -80,7 +80,7 @@ def feed():
     feed = AtomFeed('Recent Articles',
                     feed_url=request.url, 
                     url=request.url_root)
-    posts = posts[:1]
+    posts = posts[:4]
     for post in posts:
         feed.add(post.title, 
             unicode(post.html),
